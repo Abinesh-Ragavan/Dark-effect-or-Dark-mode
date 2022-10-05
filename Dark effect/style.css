@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items:center;
+
+}
+
+.input{
+
+    visibility: hidden;
+}
+
+.label{
+    position:absolute;
+    width: 80px;
+    height: 40px;
+    background-color: lightgray;
+    border-radius: 23px;
+    cursor: pointer;
+}
+
+.circle{
+    width: 34px;
+    background-color: white;
+    height: 34px;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    position: absolute;
+    animation: toggleof 0.4s linear forwards;
+}
+
+.input:checked+.label{
+    background-color: white;
+
+}
+.input:checked+ .label .circle{
+    animation: toggleon 0.4s linear forwards;
+    background-color: black;
+}
+
+@keyframes toggleon{
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(40px);
+    }
+}
+
+@keyframes toggleof{
+    0%{
+        transform: translate(40px);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+
